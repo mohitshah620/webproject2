@@ -34,7 +34,7 @@ def login(request):
         nurse_details['supervisor'] = nurse.sid.sname
         nurse_details['departments'] = departments
         print("Nurse details")
-    
+    return HttpResponse(json.dumps(nurse_details), content_type="application/json")
 
 @require_http_methods(["GET"])
 def get_task_list(request):
